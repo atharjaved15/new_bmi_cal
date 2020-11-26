@@ -128,13 +128,72 @@ class _InputPageState extends State<InputPage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
+                        RoundIcon(
+                            iconData: FontAwesomeIcons.minus,
+                            onPress: (){
+                              setState(() {
+                                sliderWeight--;
+
+                              });
+                            }
+                        ),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        RoundIcon(
+                            iconData: FontAwesomeIcons.plus,
+                            onPress: (){
+                              setState(() {
+                                sliderWeight++;
+
+                              });
+                            }
+                        ),
 
                       ],
                     )
                   ],
                 ),
               )),
-              Expanded(child: MyContainer(colors: Color(0xFF1D1E33))),
+              Expanded(
+                  child: MyContainer(
+                      colors: Color(0xFF1D1E33),
+                    cardWidget: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text('WEIGHT' , style: kLabelStyle,),
+                        Text(sliderWeight.toString(),style: kNumberStyle,),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            RoundIcon(
+                                iconData: FontAwesomeIcons.minus,
+                                onPress: (){
+                                  setState(() {
+                                    sliderWeight--;
+
+                                  });
+                                }
+                            ),
+                            SizedBox(
+                              width: 20,
+                            ),
+                            RoundIcon(
+                                iconData: FontAwesomeIcons.plus,
+                                onPress: (){
+                                  setState(() {
+                                    sliderWeight++;
+
+                                  });
+                                }
+                            ),
+
+                          ],
+                        )
+                      ],
+                    ),
+                  )
+              ),
 
             ],
           )),
