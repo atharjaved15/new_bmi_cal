@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:new_bmi_cal/constant.dart';
 
 
 class MyContainer extends StatelessWidget {
@@ -40,7 +41,7 @@ class IconTitle extends StatelessWidget {
         ),
         Text(
           label,
-          style: TextStyle(fontSize: 15,color: Colors.white),
+          style: kLabelStyle,
         )
 
       ],

@@ -1,5 +1,8 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:new_bmi_cal/constant.dart';
 import 'repeatedCodes.dart';
 
 const activeColor =  Color(0xFF1D1E33);
@@ -78,7 +81,15 @@ class _InputPageState extends State<InputPage> {
             ],
           )),
           Expanded(child:
-          MyContainer(colors: Color(0xFF1D1E33))),
+          MyContainer(
+            colors: Color(0xFF1D1E33),
+            cardWidget: Column(
+              children: <Widget>[
+                Text('HEIGHT' , style: kLabelStyle,),
+              ],
+            ),
+
+          )),
           Expanded(child:
           Row(
             children: <Widget>[
