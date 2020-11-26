@@ -1,6 +1,6 @@
-import 'dart:html';
-
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:new_bmi_cal/constant.dart';
 import 'repeatedCodes.dart';
@@ -23,6 +23,7 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
   Color maleColor = deactiveColor;
   Color femaleColor = deactiveColor;
+  int sliderHeight = 180;
   /*void updateColor(Gender gender){
     if(gender == Gender.male){
       maleColor = activeColor;
@@ -42,6 +43,8 @@ class _InputPageState extends State<InputPage> {
 
       ),
       body: Column(
+
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget> [
           Expanded(child:
           Row(
@@ -84,8 +87,29 @@ class _InputPageState extends State<InputPage> {
           MyContainer(
             colors: Color(0xFF1D1E33),
             cardWidget: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Text('HEIGHT' , style: kLabelStyle,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text(sliderHeight.toString(), style: kNumberStyle),
+                    Text('cm' ,style: kLabelStyle,),
+                  ],
+                ),
+                Slider(
+                  value: sliderHeight.toDouble(),
+                  min: 120.0,
+                  max: 220.0,
+                  activeColor: Color(0xFFEB1555),
+                  inactiveColor: Color(0xFF8D8E98),
+                  onChanged: (double newValue){
+                    setState(() {
+                      sliderHeight = newValue.round();
+                    });
+                  } ,
+
+                ),
               ],
             ),
 
