@@ -26,7 +26,7 @@ class _InputPageState extends State<InputPage> {
                 cardWidget: IconTitle(),
               )
               ),
-              Expanded(child:MyContainer(colors: Color(0xFF1D1E33),)
+              Expanded(child:MyContainer(colors: Color(0xFF1D1E33),cardWidget: IconTitle(),)
              ),
 
             ],
@@ -48,9 +48,9 @@ class _InputPageState extends State<InputPage> {
 }
 
 class IconTitle extends StatelessWidget {
-  const IconTitle({
-    Key key,
-  }) : super(key: key);
+  IconTitle({@required this.label, this.iconData});
+  final IconData iconData;
+  final String label;
 
   @override
   Widget build(BuildContext context) {
