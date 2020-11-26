@@ -23,23 +23,7 @@ class _InputPageState extends State<InputPage> {
               Expanded(child:
               MyContainer(
                 colors: Color(0xFF1D1E33),
-                cardWidget: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Icon(
-                      FontAwesomeIcons.male,
-                      size: 100,
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Text(
-                      'Male' ,
-                      style: TextStyle(fontSize: 25,color: Colors.white),
-                    )
-
-                  ],
-                ),
+                cardWidget: IconTitle(),
               )
               ),
               Expanded(child:MyContainer(colors: Color(0xFF1D1E33),)
@@ -59,6 +43,33 @@ class _InputPageState extends State<InputPage> {
           )),
         ],
       ),
+    );
+  }
+}
+
+class IconTitle extends StatelessWidget {
+  const IconTitle({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Icon(
+          FontAwesomeIcons.male,
+          size: 80,
+        ),
+        SizedBox(
+          height: 20,
+        ),
+        Text(
+          'Male' ,
+          style: TextStyle(fontSize: 25,color: Colors.white),
+        )
+
+      ],
     );
   }
 }
