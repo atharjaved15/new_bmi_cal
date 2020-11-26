@@ -4,6 +4,7 @@ import 'package:flutter/rendering.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:new_bmi_cal/constant.dart';
 import 'repeatedCodes.dart';
+import 'resultScreen.dart';
 
 const activeColor =  Color(0xFF1D1E33);
 const deactiveColor = Color(0xFF111328);
@@ -200,9 +201,7 @@ class _InputPageState extends State<InputPage> {
           )),
           GestureDetector(
             onTap: (){
-              setState(() {
-                  
-              });
+              Navigator.push(context, MaterialPageRoute(builder: (context) => ResultScreen()));
             },
             child: Container(
               color: Color(0xFFEB1555),
