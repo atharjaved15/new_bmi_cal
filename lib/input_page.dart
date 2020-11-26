@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 
 class InputPage extends StatefulWidget {
@@ -20,7 +21,26 @@ class _InputPageState extends State<InputPage> {
           Row(
             children: <Widget>[
               Expanded(child:
-              MyContainer(colors: Color(0xFF1D1E33),)
+              MyContainer(
+                colors: Color(0xFF1D1E33),
+                cardWidget: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Icon(
+                      FontAwesomeIcons.male,
+                      size: 100,
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      'Male' ,
+                      style: TextStyle(fontSize: 25,color: Colors.white),
+                    )
+
+                  ],
+                ),
+              )
               ),
               Expanded(child:MyContainer(colors: Color(0xFF1D1E33),)
              ),
@@ -44,11 +64,13 @@ class _InputPageState extends State<InputPage> {
 }
 
 class MyContainer extends StatelessWidget {
-  MyContainer({@required this.colors});
+  MyContainer({@required this.colors,this.cardWidget});
   final Color colors;
+  final Widget cardWidget;
     @override
   Widget build(BuildContext context) {
     return Container(
+      child: cardWidget,
       margin: EdgeInsets.all(15.0),
       decoration: BoxDecoration(
         color: colors,
