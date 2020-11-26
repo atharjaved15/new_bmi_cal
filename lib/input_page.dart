@@ -9,6 +9,7 @@ enum Gender{
   male,
   female,
 }
+Gender selectedGender;
 
 
 class InputPage extends StatefulWidget {
@@ -19,7 +20,7 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
   Color maleColor = deactiveColor;
   Color femaleColor = deactiveColor;
-  void updateColor(Gender gender){
+  /*void updateColor(Gender gender){
     if(gender == Gender.male){
       maleColor = activeColor;
       femaleColor = deactiveColor;
@@ -27,8 +28,9 @@ class _InputPageState extends State<InputPage> {
     if(gender == Gender.female){
       maleColor = deactiveColor;
       femaleColor = activeColor;
-    }
-  }
+    }*/
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,11 +47,11 @@ class _InputPageState extends State<InputPage> {
               GestureDetector(
                 onTap: (){
                   setState(() {
-                    updateColor(Gender.male);
+                    selectedGender=Gender.male;
                   });
                 },
                 child: MyContainer(
-                  colors: maleColor,
+                  colors: selectedGender==Gender.male?activeColor:deactiveColor,
                   cardWidget: IconTitle(
                     label: "MALE",
                     iconData: FontAwesomeIcons.male,
@@ -60,10 +62,10 @@ class _InputPageState extends State<InputPage> {
               Expanded(child:GestureDetector(
                 onTap: (){
                   setState(() {
-                      updateColor(Gender.female);
+                      selectedGender = Gender.female;
                       });
                   },
-                child: MyContainer(colors: femaleColor,cardWidget: IconTitle(
+                child: MyContainer(colors: selectedGender==Gender.female?activeColor:deactiveColor,cardWidget: IconTitle(
                   label: 'FEMLAE',
                   iconData: FontAwesomeIcons.female,
                 ),),
