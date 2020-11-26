@@ -24,6 +24,7 @@ class _InputPageState extends State<InputPage> {
   Color maleColor = deactiveColor;
   Color femaleColor = deactiveColor;
   int sliderHeight = 180;
+  int sliderWeight =60;
   /*void updateColor(Gender gender){
     if(gender == Gender.male){
       maleColor = activeColor;
@@ -108,7 +109,6 @@ class _InputPageState extends State<InputPage> {
                       sliderHeight = newValue.round();
                     });
                   } ,
-
                 ),
               ],
             ),
@@ -117,7 +117,23 @@ class _InputPageState extends State<InputPage> {
           Expanded(child:
           Row(
             children: <Widget>[
-              Expanded(child: MyContainer(colors: Color(0xFF1D1E33))),
+              Expanded(child:
+              MyContainer(
+                colors: Color(0xFF1D1E33),
+                cardWidget: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text('WEIGHT' , style: kLabelStyle,),
+                    Text(sliderWeight.toString(),style: kNumberStyle,),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+
+                      ],
+                    )
+                  ],
+                ),
+              )),
               Expanded(child: MyContainer(colors: Color(0xFF1D1E33))),
 
             ],
