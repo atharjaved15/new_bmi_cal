@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'repeatedCodes.dart';
 
 
 class InputPage extends StatefulWidget {
@@ -23,10 +24,16 @@ class _InputPageState extends State<InputPage> {
               Expanded(child:
               MyContainer(
                 colors: Color(0xFF1D1E33),
-                cardWidget: IconTitle(),
+                cardWidget: IconTitle(
+                  label: "MALE",
+                  iconData: FontAwesomeIcons.male,
+                ),
               )
               ),
-              Expanded(child:MyContainer(colors: Color(0xFF1D1E33),cardWidget: IconTitle(),)
+              Expanded(child:MyContainer(colors: Color(0xFF1D1E33),cardWidget: IconTitle(
+                label: 'FEMLAE',
+                iconData: FontAwesomeIcons.female,
+              ),)
              ),
 
             ],
@@ -47,46 +54,3 @@ class _InputPageState extends State<InputPage> {
   }
 }
 
-class IconTitle extends StatelessWidget {
-  IconTitle({@required this.label, this.iconData});
-  final IconData iconData;
-  final String label;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        Icon(
-          FontAwesomeIcons.male,
-          size: 80,
-        ),
-        SizedBox(
-          height: 20,
-        ),
-        Text(
-          'Male' ,
-          style: TextStyle(fontSize: 25,color: Colors.white),
-        )
-
-      ],
-    );
-  }
-}
-
-class MyContainer extends StatelessWidget {
-  MyContainer({@required this.colors,this.cardWidget});
-  final Color colors;
-  final Widget cardWidget;
-    @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: cardWidget,
-      margin: EdgeInsets.all(15.0),
-      decoration: BoxDecoration(
-        color: colors,
-        borderRadius: BorderRadius.circular(10.0),
-      ),
-    );
-  }
-}
