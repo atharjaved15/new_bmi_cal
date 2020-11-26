@@ -45,7 +45,7 @@ class _InputPageState extends State<InputPage> {
 
 class MyContainer extends StatelessWidget {
   MyContainer({@required this.colors});
-  Color colors;
+  final Color colors;
     @override
   Widget build(BuildContext context) {
     return Container(
