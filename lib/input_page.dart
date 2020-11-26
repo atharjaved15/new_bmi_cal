@@ -4,6 +4,7 @@ import 'package:flutter/rendering.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:new_bmi_cal/constant.dart';
 import 'repeatedCodes.dart';
+import 'Calculate.dart';
 import 'resultScreen.dart';
 
 const activeColor =  Color(0xFF1D1E33);
@@ -201,7 +202,10 @@ class _InputPageState extends State<InputPage> {
           )),
           GestureDetector(
             onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => ResultScreen()));
+              CalculatorBrain cal = CalculatorBrain(height: sliderHeight , weight: sliderWeight);
+              Navigator.push(context, MaterialPageRoute(builder: (context) => ResultScreen(
+                bmiResult: cal.CalculateBMI(),resultText: cal.getResult(),interpretation: cal.getInterpretation(),
+              )));
             },
             child: Container(
               color: Color(0xFFEB1555),

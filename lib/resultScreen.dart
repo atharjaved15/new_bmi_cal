@@ -5,6 +5,13 @@ import 'package:new_bmi_cal/input_page.dart';
 import 'package:new_bmi_cal/repeatedCodes.dart';
 
 class  ResultScreen extends StatelessWidget {
+  ResultScreen({@required this.bmiResult, @required this.interpretation , @required this.resultText});
+
+  final String bmiResult;
+final String resultText;
+final String interpretation;
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,10 +35,10 @@ class  ResultScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    Text('Normal',
+                    Text(resultText,
                     style: rColor,),
-                    Text('18.3', style: kbodyStyle, ),
-                    Text('BMI is Low'),
+                    Text(bmiResult, style: kbodyStyle, ),
+                    Text(interpretation),
                   ],
                 ),
               ),
