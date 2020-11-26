@@ -25,6 +25,7 @@ class _InputPageState extends State<InputPage> {
   Color femaleColor = deactiveColor;
   int sliderHeight = 180;
   int sliderWeight =60;
+  int sliderAge =20;
   /*void updateColor(Gender gender){
     if(gender == Gender.male){
       maleColor = activeColor;
@@ -161,8 +162,8 @@ class _InputPageState extends State<InputPage> {
                     cardWidget: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Text('WEIGHT' , style: kLabelStyle,),
-                        Text(sliderWeight.toString(),style: kNumberStyle,),
+                        Text('AGE' , style: kLabelStyle,),
+                        Text(sliderAge.toString(),style: kNumberStyle,),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
@@ -170,7 +171,7 @@ class _InputPageState extends State<InputPage> {
                                 iconData: FontAwesomeIcons.minus,
                                 onPress: (){
                                   setState(() {
-                                    sliderWeight--;
+                                    sliderAge--;
 
                                   });
                                 }
@@ -182,7 +183,7 @@ class _InputPageState extends State<InputPage> {
                                 iconData: FontAwesomeIcons.plus,
                                 onPress: (){
                                   setState(() {
-                                    sliderWeight++;
+                                    sliderAge++;
 
                                   });
                                 }
@@ -197,6 +198,26 @@ class _InputPageState extends State<InputPage> {
 
             ],
           )),
+          GestureDetector(
+            onTap: (){
+              setState(() {
+                  
+              });
+            },
+            child: Container(
+              color: Color(0xFFEB1555),
+              margin: EdgeInsets.only(top: 10.0),
+              width: double.infinity,
+              height: 80.0,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text('Calculate' , textAlign: TextAlign.center, style: TextStyle(fontSize: 30.0 , fontWeight: FontWeight.bold),),
+
+                ],
+              )
+            ),
+          ),
         ],
       ),
     );
